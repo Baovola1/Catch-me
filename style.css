@@ -1,0 +1,31 @@
+body {
+  overflow: hidden;/*On enlève tout ce qui dépasse de la page*/
+  min-height: 100vh;
+  cursor: crosshair;/*Création du petit croix cible avec la souris*/
+}
+ .bubble {
+  position: absolute;/*pour aller partout*/
+  border-radius: 300px;
+  background: rgba(255, 166, 0, 0.6);
+  opacity: 0;
+  animation: anim 8s forwards;/*forwards= pour que la bulle reste dans son état à la fin de l'animation*/
+  filter: hue-rotate(0deg); /*Pour changer la couleur*/
+}
+
+/* Dans keyframes => On ne peut pas injecter une classe=> il faut une variable */
+@keyframes anim {
+  to {
+    top: -250px;
+    left: var(--left);
+    opacity: 1;
+    filter: hue-rotate(720deg);/*paC 2 tours et ça passe de toutes les couleurs*/
+  }
+}
+
+/*Style du COMPTEUR*/
+ h3 {
+  font-size: 10rem;
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(128, 128, 128, 0.555);
+} 
